@@ -19,4 +19,6 @@
 
 - (void)stopTimerRun:(BOOL)forSave;
 
+- (void)clearAllResultAction;
+
 @end

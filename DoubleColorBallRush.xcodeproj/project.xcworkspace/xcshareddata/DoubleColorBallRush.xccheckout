@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>39450BD0-FAA9-435C-9253-735B6C01141A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DoubleColorBallRush</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E89148CD-CA5C-43B6-87BB-8AFA97999D9A</key>
+		<string>https://github.com/overmindgc/DoubleColorRush.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DoubleColorBallRush.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E89148CD-CA5C-43B6-87BB-8AFA97999D9A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/overmindgc/DoubleColorRush.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E89148CD-CA5C-43B6-87BB-8AFA97999D9A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E89148CD-CA5C-43B6-87BB-8AFA97999D9A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DoubleColorBallRush</string>
+		</dict>
+	</array>
+</dict>
+</plist>

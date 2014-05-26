@@ -20,6 +20,8 @@
 		7B06AC0B192C341100DE95D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B06AC09192C341100DE95D7 /* InfoPlist.strings */; };
 		7B06AC0D192C341100DE95D7 /* DoubleColorBallRushTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B06AC0C192C341100DE95D7 /* DoubleColorBallRushTests.m */; };
 		7B06AC19192C3E7B00DE95D7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B06AC18192C3E7B00DE95D7 /* MainViewController.m */; };
+		7B086CF919331385008FACC6 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B086CF719331385008FACC6 /* delete.png */; };
+		7B086CFC193324A4008FACC6 /* unionlott.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B086CFB193324A4008FACC6 /* unionlott.jpg */; };
 		7B7017B1192EE5F800ED643E /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7017AF192EE5F800ED643E /* ResultViewController.m */; };
 		7B7017B2192EE5F800ED643E /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B7017B0192EE5F800ED643E /* ResultViewController.xib */; };
 		7B7017BB192F15B100ED643E /* CommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7017BA192F15B100ED643E /* CommonUtils.m */; };
@@ -60,6 +62,8 @@
 		7B06AC0C192C341100DE95D7 /* DoubleColorBallRushTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoubleColorBallRushTests.m; sourceTree = "<group>"; };
 		7B06AC17192C3E7B00DE95D7 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		7B06AC18192C3E7B00DE95D7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		7B086CF719331385008FACC6 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
+		7B086CFB193324A4008FACC6 /* unionlott.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unionlott.jpg; sourceTree = "<group>"; };
 		7B7017AE192EE5F800ED643E /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		7B7017AF192EE5F800ED643E /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 		7B7017B0192EE5F800ED643E /* ResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
@@ -197,6 +201,8 @@
 		7B81F370192C9AA600B1218B /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				7B086CFB193324A4008FACC6 /* unionlott.jpg */,
+				7B086CF719331385008FACC6 /* delete.png */,
 				7B7017BE192F353900ED643E /* balls_bg.png */,
 				7B7017BF192F353900ED643E /* world_blue.png */,
 				7B7017C0192F353900ED643E /* world_red.png */,
@@ -279,10 +285,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B086CFC193324A4008FACC6 /* unionlott.jpg in Resources */,
 				7B7017C3192F353900ED643E /* world_red.png in Resources */,
 				7B06ABF2192C341100DE95D7 /* InfoPlist.strings in Resources */,
 				7B7017C1192F353900ED643E /* balls_bg.png in Resources */,
 				7B06ABFA192C341100DE95D7 /* Images.xcassets in Resources */,
+				7B086CF919331385008FACC6 /* delete.png in Resources */,
 				7B7017C2192F353900ED643E /* world_blue.png in Resources */,
 				7B7017B2192EE5F800ED643E /* ResultViewController.xib in Resources */,
 			);

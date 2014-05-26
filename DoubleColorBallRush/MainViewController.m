@@ -107,7 +107,7 @@
     
     //创建子组件
     titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 60, view.frame.size.width, 30)];
-    titleLabel.text = @"DOUBLE COLOR";
+    titleLabel.text = @"双色球摇奖机";
     titleLabel.font = [UIFont fontWithName:@"Menlo" size:28];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:titleLabel];
@@ -157,7 +157,7 @@
     [self.view addSubview:analyseBtn];
     
     clearBtn = [[UIButton alloc] initWithFrame:CGRectMake((view.frame.size.width - 120) / 2, 520, 120, 25)];
-    [clearBtn setTitle:@"清除记录" forState:UIControlStateNormal];
+    [clearBtn setTitle:@"重置" forState:UIControlStateNormal];
     [clearBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [clearBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
     [clearBtn addTarget:self action:@selector(clearAllResultAction) forControlEvents:UIControlEventTouchDown];
@@ -167,6 +167,7 @@
     
 }
 
+#pragma mark -处理函数
 
 - (void)startRunAction
 {
@@ -192,16 +193,18 @@
 {
     //结果视图创建
     ResultViewController *resultVC = [[ResultViewController alloc] initWithNibName:@"ResultViewController" bundle:nil];
-    
-    [self presentViewController:resultVC animated:YES completion:nil];
+    resultVC.title = @"摇奖结果";
+    [self.navigationController pushViewController:resultVC animated:YES];
+//    [self presentViewController:resultVC animated:YES completion:nil];
 }
 
 - (void)clearAllResultAction
 {
     count = 0;
-    [ResultConsts sharedManager].count = [NSNumber numberWithInt:0];
-    [[ResultConsts sharedManager].resultArray removeAllObjects];
-    [self setCountLabelTextWith:[ResultConsts sharedManager].count];
+    [ResultConsts sharedInstance].count = [NSNumber numberWithInt:0];
+    [[ResultConsts sharedInstance].resultArray removeAllObjects];
+    [self setCountLabelTextWith:[ResultConsts sharedInstance].count];
+    resultLabel.text = @"00 00 00 00 00 00 00";
 }
 
 
@@ -234,9 +237,9 @@
     [runTimer invalidate];
     runTimer = nil;
     if (forSave == YES) {
-        [[ResultConsts sharedManager] countPlusOne];
-        [[ResultConsts sharedManager] addOneResultToArray:resultLabel.text];
-        [self setCountLabelTextWith:[ResultConsts sharedManager].count];
+        [[ResultConsts sharedInstance] countPlusOne];
+        [[ResultConsts sharedInstance] addOneResultToArray:resultLabel.text];
+        [self setCountLabelTextWith:[ResultConsts sharedInstance].count];
     }
     
     clearBtn.hidden = NO;
@@ -253,6 +256,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationController.navigationBarHidden = YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+    //结果里边删除的话，同步一下
+    [self setCountLabelTextWith:[ResultConsts sharedInstance].count];
 }
 
 - (void)viewDidDisappear:(BOOL)animated

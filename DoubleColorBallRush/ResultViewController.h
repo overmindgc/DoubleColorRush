@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ResultViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface ResultViewController : UIViewController<UITableViewDelegate, UITableViewDataSource,UIAlertViewDelegate>
 
 @property IBOutlet UILabel *countLabel;
+
+@property IBOutlet UITableView *resultTable;
 
 @property NSMutableArray *tableListItems;
 

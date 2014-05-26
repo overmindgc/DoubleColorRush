@@ -16,16 +16,15 @@
 
 @synthesize resultArray;
 
-static ResultConsts *shareManager = nil;
-
 //获取单例实例
-+ (ResultConsts *)sharedManager
++ (ResultConsts *)sharedInstance
 {
     static dispatch_once_t once;
+    static ResultConsts *sharedInstance = nil;
     dispatch_once(&once, ^{
-        shareManager = [[self alloc] init];
+        sharedInstance = [[self alloc] init];
     });
-    return shareManager;
+    return sharedInstance;
 }
 
 - (id)init
@@ -42,6 +41,13 @@ static ResultConsts *shareManager = nil;
 {
     int c = [count intValue];
     c++;
+    count = [NSNumber numberWithInt:c];
+}
+
+- (void)countMinusOne
+{
+    int c = [count intValue];
+    c--;
     count = [NSNumber numberWithInt:c];
 }
 

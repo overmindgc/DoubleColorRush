@@ -10,7 +10,7 @@
 
 @interface ResultConsts : NSObject
 
-+ (ResultConsts *)sharedManager;
++ (ResultConsts *)sharedInstance;
 
 @property NSString* singletonData;
 
@@ -19,6 +19,8 @@
 @property NSMutableArray *resultArray;
 
 - (void)countPlusOne;
+
+- (void)countMinusOne;
 
 - (void)addOneResultToArray:(NSString *)resultStr;
 
