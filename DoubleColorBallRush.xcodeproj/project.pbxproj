@@ -22,6 +22,8 @@
 		7B06AC19192C3E7B00DE95D7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B06AC18192C3E7B00DE95D7 /* MainViewController.m */; };
 		7B086CF919331385008FACC6 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B086CF719331385008FACC6 /* delete.png */; };
 		7B086CFC193324A4008FACC6 /* unionlott.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B086CFB193324A4008FACC6 /* unionlott.jpg */; };
+		7B4D0A9319347CF000143B1E /* ASValuePopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4D0A9019347CF000143B1E /* ASValuePopUpView.m */; };
+		7B4D0A9419347CF000143B1E /* ASValueTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4D0A9219347CF000143B1E /* ASValueTrackingSlider.m */; };
 		7B7017B1192EE5F800ED643E /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7017AF192EE5F800ED643E /* ResultViewController.m */; };
 		7B7017B2192EE5F800ED643E /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B7017B0192EE5F800ED643E /* ResultViewController.xib */; };
 		7B7017BB192F15B100ED643E /* CommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7017BA192F15B100ED643E /* CommonUtils.m */; };
@@ -64,6 +66,10 @@
 		7B06AC18192C3E7B00DE95D7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		7B086CF719331385008FACC6 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		7B086CFB193324A4008FACC6 /* unionlott.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unionlott.jpg; sourceTree = "<group>"; };
+		7B4D0A8F19347CF000143B1E /* ASValuePopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValuePopUpView.h; sourceTree = "<group>"; };
+		7B4D0A9019347CF000143B1E /* ASValuePopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValuePopUpView.m; sourceTree = "<group>"; };
+		7B4D0A9119347CF000143B1E /* ASValueTrackingSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValueTrackingSlider.h; sourceTree = "<group>"; };
+		7B4D0A9219347CF000143B1E /* ASValueTrackingSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValueTrackingSlider.m; sourceTree = "<group>"; };
 		7B7017AE192EE5F800ED643E /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		7B7017AF192EE5F800ED643E /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 		7B7017B0192EE5F800ED643E /* ResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
@@ -138,6 +144,7 @@
 		7B06ABED192C341100DE95D7 /* DoubleColorBallRush */ = {
 			isa = PBXGroup;
 			children = (
+				7B4D0A8E19347CF000143B1E /* ASValueTrackingSlider */,
 				7B81F370192C9AA600B1218B /* assets */,
 				7B06AC16192C3D3500DE95D7 /* LogicUtils */,
 				7B06ABF6192C341100DE95D7 /* AppDelegate.h */,
@@ -196,6 +203,17 @@
 				7B7017BA192F15B100ED643E /* CommonUtils.m */,
 			);
 			name = LogicUtils;
+			sourceTree = "<group>";
+		};
+		7B4D0A8E19347CF000143B1E /* ASValueTrackingSlider */ = {
+			isa = PBXGroup;
+			children = (
+				7B4D0A8F19347CF000143B1E /* ASValuePopUpView.h */,
+				7B4D0A9019347CF000143B1E /* ASValuePopUpView.m */,
+				7B4D0A9119347CF000143B1E /* ASValueTrackingSlider.h */,
+				7B4D0A9219347CF000143B1E /* ASValueTrackingSlider.m */,
+			);
+			path = ASValueTrackingSlider;
 			sourceTree = "<group>";
 		};
 		7B81F370192C9AA600B1218B /* assets */ = {
@@ -318,7 +336,9 @@
 				7B06AC19192C3E7B00DE95D7 /* MainViewController.m in Sources */,
 				7B81F36A192C817D00B1218B /* ResultConsts.m in Sources */,
 				7B06ABF4192C341100DE95D7 /* main.m in Sources */,
+				7B4D0A9419347CF000143B1E /* ASValueTrackingSlider.m in Sources */,
 				7B7017B1192EE5F800ED643E /* ResultViewController.m in Sources */,
+				7B4D0A9319347CF000143B1E /* ASValuePopUpView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

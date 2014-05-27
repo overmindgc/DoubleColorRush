@@ -11,6 +11,7 @@
 #import "ResultConsts.h"
 #import "ResultViewController.h"
 #import "CommonUtils.h"
+#import "ASValueTrackingSlider.h"
 
 @interface MainViewController ()
 
@@ -20,7 +21,7 @@
 
 @property UILabel *countLabel;
 
-@property UISlider *speedSlider;
+@property ASValueTrackingSlider *speedSlider;
 
 @property UIButton *runBtn;
 
@@ -36,9 +37,6 @@
     BOOL isRunning;
     
     int count;
-    
-    float speedMax;
-    float speedMin;
 }
 
 @synthesize titleLabel;
@@ -66,8 +64,6 @@
     if (self) {
         isRunning = NO;
         count = 0;
-        speedMax = 0.1;
-        speedMin = 0.001;
         runBL = [[DoubleColorRunBL alloc] init];
     }
     
@@ -124,20 +120,33 @@
     countLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:countLabel];
     
-    UILabel *speedLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 270, view.frame.size.width, 30)];
+    UILabel *speedLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 320, view.frame.size.width, 30)];
     speedLabel.font = [UIFont fontWithName:@"Arial" size:14];
-    speedLabel.text = @"+      Speed     -";
+    speedLabel.text = @"-      Speed     +";
     speedLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:speedLabel];
     
-    speedSlider = [[UISlider alloc] initWithFrame:CGRectMake((view.frame.size.width - 220) / 2, 300, 220, 25)];
-    [speedSlider addTarget:self action:@selector(speedChangeAction) forControlEvents:UIControlEventValueChanged];
-    speedSlider.maximumValue = speedMax;
-    speedSlider.minimumValue = speedMin;
-    speedSlider.value = 0.05;
-    speedSlider.minimumTrackTintColor = [UIColor redColor];
-    speedSlider.maximumTrackTintColor = [CommonUtils hexStringToColor:@"#009CFF"];
+//    speedSlider = [[UISlider alloc] initWithFrame:CGRectMake((view.frame.size.width - 220) / 2, 300, 220, 25)];
+//    [speedSlider addTarget:self action:@selector(speedChangeAction) forControlEvents:UIControlEventValueChanged];
+//    speedSlider.maximumValue = speedMax;
+//    speedSlider.minimumValue = speedMin;
+//    speedSlider.value = 0.05;
+//    speedSlider.minimumTrackTintColor = [UIColor redColor];
+//    speedSlider.maximumTrackTintColor = [CommonUtils hexStringToColor:@"#009CFF"];
+//    [self.view addSubview:speedSlider];
+    
+    speedSlider = [[ASValueTrackingSlider alloc] initWithFrame:CGRectMake((view.frame.size.width - 220) / 2, 290, 220, 25)];
+    [speedSlider addTarget:self action:@selector(speedChangeAction) forControlEvents:UIControlEventValueChanged];\
+    speedSlider.maximumValue = 1;
+    speedSlider.minimumValue = 0.01;
+    speedSlider.value = 0.5;
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterPercentStyle];
+    [speedSlider setNumberFormatter:formatter];
+    speedSlider.font = [UIFont fontWithName:@"Futura-CondensedExtraBold" size:26];
+    speedSlider.popUpViewAnimatedColors = @[[UIColor purpleColor], [UIColor redColor], [UIColor orangeColor]];
     [self.view addSubview:speedSlider];
+    
     
     runBtn = [[UIButton alloc] initWithFrame:CGRectMake((view.frame.size.width - 80) / 2, 390, 80, 40)];
     [runBtn setTitle:@"Start" forState:UIControlStateNormal];
@@ -173,7 +182,7 @@
 {
     if (isRunning == NO) {
          //点击开始处理
-        [self startTimerRunWith:speedSlider.value];
+        [self startTimerRunWith:[self getFinalSpeed]];
     } else {
         //点击停止处理
         [self stopTimerRun:YES];
@@ -185,8 +194,16 @@
 {
     if (isRunning == YES) {
         [self stopTimerRun:NO];
-        [self startTimerRunWith:speedSlider.value];
+        [self startTimerRunWith:[self getFinalSpeed]];
     }
+}
+
+//计算最终所用的速度值
+- (float)getFinalSpeed
+{
+    float speedPercent = speedSlider.value * 100;
+    float newSpeed = 1 / speedPercent;
+    return newSpeed;
 }
 
 - (void)analyseBtnAction
