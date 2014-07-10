@@ -93,35 +93,36 @@
 //    bgImgView.userInteractionEnabled = YES;
 //    [self.view addSubview:bgImgView];
     
+    //创建子组件
+    titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 60, view.frame.size.width, 30)];
+    titleLabel.text = @"双色球摇奖机";
+    titleLabel.font = [UIFont fontWithName:@"Menlo" size:30];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:titleLabel];
+    
     //球的背景图
-    UIImageView *ballBgImgView = [[UIImageView alloc] initWithFrame:CGRectMake(view.frame.size.width/2 - 247/2 + 2, 148, 244, 33)];
+    UIImageView *ballBgImgView = [[UIImageView alloc] initWithFrame:CGRectMake(view.frame.size.width/2 - 247/2 + 2, view.frame.size.height - 322, 244, 33)];
     UIImage *ballBgImg = [UIImage imageNamed:@"balls_bg.png"];
     ballBgImgView.image = ballBgImg;
     ballBgImgView.alpha = 1;
     ballBgImgView.userInteractionEnabled = YES;
     [self.view addSubview:ballBgImgView];
     
-    //创建子组件
-    titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 60, view.frame.size.width, 30)];
-    titleLabel.text = @"双色球摇奖机";
-    titleLabel.font = [UIFont fontWithName:@"Menlo" size:28];
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:titleLabel];
     
-    resultLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, view.frame.size.width, 30)];
+    resultLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, view.frame.size.height - 320, view.frame.size.width, 30)];
     resultLabel.text = @"00 00 00 00 00 00 00";
     resultLabel.font = [UIFont fontWithName:@"Arial" size:25];
     resultLabel.textAlignment = NSTextAlignmentCenter;
     resultLabel.textColor = [UIColor whiteColor];
     [self.view addSubview:resultLabel];
     
-    countLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, view.frame.size.width, 30)];
+    countLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, view.frame.size.height - 270, view.frame.size.width, 30)];
     [self setCountLabelTextWith:[NSNumber numberWithInt:0]];
     countLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:countLabel];
     
-    UILabel *speedLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 320, view.frame.size.width, 30)];
-    speedLabel.font = [UIFont fontWithName:@"Arial" size:14];
+    UILabel *speedLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, view.frame.size.height - 175, view.frame.size.width, 30)];
+    speedLabel.font = [UIFont fontWithName:@"Arial" size:15];
     speedLabel.text = @"-      Speed     +";
     speedLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:speedLabel];
@@ -135,8 +136,8 @@
 //    speedSlider.maximumTrackTintColor = [CommonUtils hexStringToColor:@"#009CFF"];
 //    [self.view addSubview:speedSlider];
     
-    speedSlider = [[ASValueTrackingSlider alloc] initWithFrame:CGRectMake((view.frame.size.width - 220) / 2, 290, 220, 25)];
-    [speedSlider addTarget:self action:@selector(speedChangeAction) forControlEvents:UIControlEventValueChanged];\
+    speedSlider = [[ASValueTrackingSlider alloc] initWithFrame:CGRectMake((view.frame.size.width - 220) / 2, view.frame.size.height - 200, 220, 25)];
+    [speedSlider addTarget:self action:@selector(speedChangeAction) forControlEvents:UIControlEventValueChanged];
     speedSlider.maximumValue = 1;
     speedSlider.minimumValue = 0.01;
     speedSlider.value = 0.5;
@@ -148,29 +149,29 @@
     [self.view addSubview:speedSlider];
     
     
-    runBtn = [[UIButton alloc] initWithFrame:CGRectMake((view.frame.size.width - 80) / 2, 390, 80, 40)];
+    runBtn = [[UIButton alloc] initWithFrame:CGRectMake((view.frame.size.width - 80) / 2, view.frame.size.height - 120, 80, 40)];
     [runBtn setTitle:@"Start" forState:UIControlStateNormal];
     [runBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [runBtn setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
     [runBtn addTarget:self action:@selector(startRunAction) forControlEvents:UIControlEventTouchDown];
-    runBtn.titleLabel.font = [UIFont systemFontOfSize:30];
+    runBtn.titleLabel.font = [UIFont systemFontOfSize:35];
     [self.view addSubview:runBtn];
     
-    analyseBtn = [[UIButton alloc] initWithFrame:CGRectMake((view.frame.size.width - 120) / 2, 480, 120, 25)];
+    analyseBtn = [[UIButton alloc] initWithFrame:CGRectMake((view.frame.size.width - 120) / 2, view.frame.size.height - 50, 120, 25)];
     [analyseBtn setTitle:@"查看摇奖记录" forState:UIControlStateNormal];
     [analyseBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [analyseBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
     [analyseBtn addTarget:self action:@selector(analyseBtnAction) forControlEvents:UIControlEventTouchDown];
-    analyseBtn.titleLabel.font = [UIFont fontWithName:@"Arial" size:16];
+    analyseBtn.titleLabel.font = [UIFont fontWithName:@"Arial" size:20];
     analyseBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:analyseBtn];
     
-    clearBtn = [[UIButton alloc] initWithFrame:CGRectMake((view.frame.size.width - 120) / 2, 520, 120, 25)];
+    clearBtn = [[UIButton alloc] initWithFrame:CGRectMake((view.frame.size.width - 120) / 2, view.frame.size.height - 15, 120, 25)];
     [clearBtn setTitle:@"重置" forState:UIControlStateNormal];
     [clearBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [clearBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
     [clearBtn addTarget:self action:@selector(clearAllResultAction) forControlEvents:UIControlEventTouchDown];
-    clearBtn.titleLabel.font = [UIFont fontWithName:@"Arial" size:14];
+    clearBtn.titleLabel.font = [UIFont fontWithName:@"Arial" size:18];
     clearBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:clearBtn];
     

@@ -22,6 +22,7 @@
 
 @synthesize tableListItems;
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -112,7 +113,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [tableListItems removeObjectAtIndex:indexPath.row];
         [resultTable deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        countLabel.text = [NSString stringWithFormat:@"共%lu注",tableListItems.count];
+        countLabel.text = [NSString stringWithFormat:@"共%d注",tableListItems.count];
         [[ResultConsts sharedInstance].resultArray removeObjectAtIndex:indexPath.row];
         [[ResultConsts sharedInstance] countMinusOne];
     }

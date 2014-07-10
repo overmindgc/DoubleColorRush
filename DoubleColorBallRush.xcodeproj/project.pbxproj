@@ -46,7 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7B06ABE4192C341100DE95D7 /* DoubleColorBallRush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoubleColorBallRush.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B06ABE4192C341100DE95D7 /* 双色球.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "双色球.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B06ABE7192C341100DE95D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7B06ABE9192C341100DE95D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7B06ABEB192C341100DE95D7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -124,7 +124,7 @@
 		7B06ABE5192C341100DE95D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7B06ABE4192C341100DE95D7 /* DoubleColorBallRush.app */,
+				7B06ABE4192C341100DE95D7 /* 双色球.app */,
 				7B06ABFF192C341100DE95D7 /* DoubleColorBallRushTests.xctest */,
 			);
 			name = Products;
@@ -238,6 +238,7 @@
 				7B06ABE0192C341100DE95D7 /* Sources */,
 				7B06ABE1192C341100DE95D7 /* Frameworks */,
 				7B06ABE2192C341100DE95D7 /* Resources */,
+				7B6C6A55196E7C8F0054A079 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -245,7 +246,7 @@
 			);
 			name = DoubleColorBallRush;
 			productName = DoubleColorBallRush;
-			productReference = 7B06ABE4192C341100DE95D7 /* DoubleColorBallRush.app */;
+			productReference = 7B06ABE4192C341100DE95D7 /* 双色球.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7B06ABFE192C341100DE95D7 /* DoubleColorBallRushTests */ = {
@@ -324,6 +325,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7B6C6A55196E7C8F0054A079 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate\nif [ \"${PLATFORM_NAME}\" ==\"iphoneos\" ] || [ \"${PLATFORM_NAME}\" == \"ipados\"]; then\n/Applications/Xcode.app/Contents/Developer/iphoneentitlements/gen_entitlements.py\"my.company.${PROJECT_NAME}\"\"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\"--entitlements\"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\"\"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7B06ABE0192C341100DE95D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -396,7 +413,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -434,7 +451,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -458,7 +475,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DoubleColorBallRush/DoubleColorBallRush-Prefix.pch";
 				INFOPLIST_FILE = "DoubleColorBallRush/DoubleColorBallRush-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "双色球";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -471,7 +489,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DoubleColorBallRush/DoubleColorBallRush-Prefix.pch";
 				INFOPLIST_FILE = "DoubleColorBallRush/DoubleColorBallRush-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "双色球";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
