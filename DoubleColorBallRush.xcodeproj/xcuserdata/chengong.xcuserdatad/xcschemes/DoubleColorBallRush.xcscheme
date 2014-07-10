@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7B06ABE3192C341100DE95D7"
-               BuildableName = "DoubleColorBallRush.app"
+               BuildableName = "&#x53cc;&#x8272;&#x7403;.app"
                BlueprintName = "DoubleColorBallRush"
                ReferencedContainer = "container:DoubleColorBallRush.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7B06ABE3192C341100DE95D7"
-            BuildableName = "DoubleColorBallRush.app"
+            BuildableName = "&#x53cc;&#x8272;&#x7403;.app"
             BlueprintName = "DoubleColorBallRush"
             ReferencedContainer = "container:DoubleColorBallRush.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7B06ABE3192C341100DE95D7"
-            BuildableName = "DoubleColorBallRush.app"
+            BuildableName = "&#x53cc;&#x8272;&#x7403;.app"
             BlueprintName = "DoubleColorBallRush"
             ReferencedContainer = "container:DoubleColorBallRush.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7B06ABE3192C341100DE95D7"
-            BuildableName = "DoubleColorBallRush.app"
+            BuildableName = "&#x53cc;&#x8272;&#x7403;.app"
             BlueprintName = "DoubleColorBallRush"
             ReferencedContainer = "container:DoubleColorBallRush.xcodeproj">
          </BuildableReference>
