@@ -46,7 +46,7 @@
     self.navigationItem.rightBarButtonItem = clearBtnItem;
     
     tableListItems = [[NSMutableArray alloc] init];
-    NSString *imgPath = @"unionlott.jpg";
+    NSString *imgPath = @"unionlott.png";
 //    for (int i=0; i<33; i++) {
 //        NSString *nameValue = [NSString stringWithFormat:@"号码：%d",i + 1];
 //        NSDictionary *itemDic = [NSDictionary dictionaryWithObjectsAndKeys:nameValue,@"name", imgPath,@"path", nil];

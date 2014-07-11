@@ -16,21 +16,32 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fBv-oQ-2lg">
-                    <rect key="frame" x="0.0" y="8" width="320" height="515"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fBv-oQ-2lg">
+                    <rect key="frame" x="0.0" y="7" width="320" height="522"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="BDj-sG-N7h"/>
                         <outlet property="delegate" destination="-1" id="AwS-GE-QG1"/>
                     </connections>
                 </tableView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="共0注" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTW-mU-maQ">
-                    <rect key="frame" x="0.0" y="534" width="320" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="共0注" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTW-mU-maQ">
+                    <rect key="frame" x="0.0" y="532" width="320" height="21"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="0.0" blue="0.023529414087533951" alpha="1" colorSpace="deviceRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="fBv-oQ-2lg" secondAttribute="trailing" id="0hc-sU-7Ne"/>
+                <constraint firstItem="fBv-oQ-2lg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="7" id="IrD-gf-Hqj"/>
+                <constraint firstItem="TTW-mU-maQ" firstAttribute="top" secondItem="fBv-oQ-2lg" secondAttribute="bottom" constant="3" id="Jcf-0e-7Kw"/>
+                <constraint firstItem="fBv-oQ-2lg" firstAttribute="leading" secondItem="TTW-mU-maQ" secondAttribute="leading" id="UjH-O2-Vl3"/>
+                <constraint firstAttribute="bottom" secondItem="fBv-oQ-2lg" secondAttribute="bottom" constant="39" id="aBK-IL-NIB"/>
+                <constraint firstAttribute="bottom" secondItem="TTW-mU-maQ" secondAttribute="bottom" constant="15" id="b1x-K8-Dr6"/>
+                <constraint firstItem="fBv-oQ-2lg" firstAttribute="trailing" secondItem="TTW-mU-maQ" secondAttribute="trailing" id="i6n-Ks-FL4"/>
+                <constraint firstItem="fBv-oQ-2lg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lMl-X6-Vqj"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
